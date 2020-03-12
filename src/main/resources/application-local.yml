@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/resume
+    password: postgres
+    username:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+server:
+  port : 7070
+
+jwt:
+  expiration: 60
+  secret: secret
+  issuer: blackmonster
+
+cors:
+  domain: localhost:8080
+
+logging:
+  pattern:
+    console: "%d{ABSOLUTE} %5p %c{1}:%L - %m%n"
+  level:
+    root: INFO
+    org.springframework: INFO
+    xyz.blackmonster: DEBUG
+    org.hibernate: ERROR
+
+pdf:
+  bucket-name: resume-published
